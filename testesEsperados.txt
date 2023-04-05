@@ -1,0 +1,272 @@
+Failed tests
+Test 1: input00
+Test 2: input01
+Test 3: input02
+Test 4: input03
+Test 5: input04
+Test 6: input05
+Test 7: input06
+Test 8: input07
+Test 9: input08
+Test 10: input09
+Test 1: input00
+Incorrect program output
+--- Input ---
+# teste 00
+insert_0      2
+insert_0    -1
+insert_end      5
+print
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista= -1 2 5
+
+Test 2: input01
+Incorrect program output
+--- Input ---
+# teste 01
+insert_0   8 1 9  7 5
+insert_0    0
+insert_end   1 2 3 4  5  6
+print
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista= 0 5 7 9 1 8 1 2 3 4 5 6
+
+Test 3: input02
+Incorrect program output
+--- Input ---
+# teste 02
+insert_end   -2 -1 0 1 2 3 4 5  6
+print
+print_0
+print_end
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista= -2 -1 0 1 2 3 4 5 6
+Lista(0)= -2
+Lista(end)= 6
+
+Test 4: input03
+Incorrect program output
+--- Input ---
+# teste 03
+clear
+insert_0     3 6 4 8 6  1 7 12
+print
+delete_0
+print_0
+delete_end
+print_end
+print
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Comando clear: Lista vazia!
+Lista= 12 7 1 6 8 4 6 3
+Lista(0)= 7
+Lista(end)= 6
+Lista= 7 1 6 8 4 6
+
+Test 5: input04
+Incorrect program output
+--- Input ---
+# teste 04
+dim
+insert_end   0 1 2 3 4 5  6 7 8 9
+print
+dim
+clear
+dim
+print
+delete_0
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista tem 0 itens
+Lista= 0 1 2 3 4 5 6 7 8 9
+Lista tem 10 itens
+Lista tem 0 itens
+Comando print: Lista vazia!
+Comando delete_0: Lista vazia!
+
+Test 6: input05
+Incorrect program output
+--- Input ---
+# teste 05
+
+insert_end   0 2 4 6 8 10 12 14 16 18 20
+print
+find         8
+find         0
+find         20
+delete_end
+insert_end   18
+insert_end   18
+print
+find_max
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista= 0 2 4 6 8 10 12 14 16 18 20
+Item 8 na posicao 4
+Item 0 na posicao 0
+Item 20 na posicao 10
+Lista= 0 2 4 6 8 10 12 14 16 18 18 18
+Max Item 18 na posicao 9
+
+Test 7: input06
+Incorrect program output
+--- Input ---
+# teste 06
+
+insert_end  0 1 2 3  4  5  6 7 8 9
+print
+delete_pos  4
+print
+delete_pos  0
+print_0
+delete_pos  7
+print_end
+print
+
+delete_pos  70
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista= 0 1 2 3 4 5 6 7 8 9
+Lista= 0 1 2 3 5 6 7 8 9
+Lista(0)= 1
+Lista(end)= 8
+Lista= 1 2 3 5 6 7 8
+Comando delete_pos: Posicao invalida!
+
+Test 8: input07
+Incorrect program output
+--- Input ---
+# teste 07
+
+insert_end   -1 1 3 5 7 9 10 11 12 13 15 17 -17
+print
+
+invert_range    5  9
+print
+
+invert_range    10  12
+print
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Lista= -1 1 3 5 7 9 10 11 12 13 15 17 -17
+Lista= -1 1 3 5 7 13 12 11 10 9 15 17 -17
+Lista= -1 1 3 5 7 13 12 11 10 9 -17 17 15
+
+Test 9: input08
+Incorrect program output
+--- Input ---
+# teste 08
+clear
+insert_0      3 6 4 6 8 4 2 9 6 4 6 3
+insert_end   -1 -5 12 3 45 -23 45  30  30
+print
+dim
+delete_0
+delete_0
+delete_end
+find_max
+delete_pos 10
+print
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Comando clear: Lista vazia!
+Lista= 3 6 4 6 9 2 4 8 6 4 6 3 -1 -5 12 3 45 -23 45 30 30
+Lista tem 21 itens
+Max Item 45 na posicao 14
+Lista= 4 6 9 2 4 8 6 4 6 3 -5 12 3 45 -23 45 30
+
+Test 10: input09
+Incorrect program output
+--- Input ---
+# teste 09
+clear
+insert_end   -1 -5 12 3 45 -23 45 30 30
+insert_end   -1 -5 12 3 45 -23 45 30 30
+insert_0      3 6 4 6 8 4 2 9 6 4 6 3
+insert_0      3 6 4 6 8 4 2 9 6 4 6 3
+insert_end   -1 -5 12 3 45 -23 45 30 30
+insert_end   -1 -5 12 3 45 -23 45 30 30
+insert_0      3 6 4 6 8 4 2 9 6 4 6 3
+insert_0      3 6 4 6 8 4 2 9 6 4 6 3
+dim
+print_0
+print_end
+print
+delete_pos 2
+delete_pos 5
+delete_pos 15
+delete_pos 23
+delete_end
+delete_end
+delete_end
+delete_end
+delete_end
+delete_end
+delete_end
+delete_end
+delete_end
+delete_end
+dim
+print
+invert_range   0 30
+print
+
+
+--- Program output ---
+#
+
+--- Expected output (exact text)---
+Comando clear: Lista vazia!
+Lista tem 84 itens
+Lista(0)= 3
+Lista(end)= 30
+Lista= 3 6 4 6 9 2 4 8 6 4 6 3 3 6 4 6 9 2 4 8 6 4 6 3 3 6 4 6 9 2 4 8 6 4 6 3 3 6 4 6 9 2 4 8 6 4 6 3 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30 30
+Lista tem 70 itens
+Lista= 3 6 6 9 2 8 6 4 6 3 3 6 4 6 9 4 8 6 4 6 3 3 6 6 9 2 4 8 6 4 6 3 3 6 4 6 9 2 4 8 6 4 6 3 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30
+Lista= 6 4 6 8 4 2 9 6 6 3 3 6 4 6 8 4 9 6 4 6 3 3 6 4 6 8 2 9 6 6 3 3 3 6 4 6 9 2 4 8 6 4 6 3 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30 30 -1 -5 12 3 45 -23 45 30
+
+Summary of tests
++------------------------------+
+| 10 tests run/ 0 tests passed |
++------------------------------+
+

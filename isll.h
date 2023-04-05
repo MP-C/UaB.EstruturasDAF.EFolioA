@@ -26,7 +26,18 @@ private:
    // atributos obrigatórios
    int n;                // dimensão atual da lista
    // outros atributos e métodos (protótipos) livres
-
+//   void insert_0(int pos);
+//   void insert_end(int val);
+//   void print_0();
+//   void print_end();
+//   void print();
+//   void delete_0();
+//   void delete_end();void dim();
+//   void clear();
+//   void find(int val);
+//   void find_max();void delete_pos(int pos);
+//   void invert_range(string cmd, int val, int pos1, int pos2);
+//   void verificarLista(string choice);
 };
 
 // EOF

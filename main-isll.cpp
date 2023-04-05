@@ -1,15 +1,4 @@
 
-// Defina neste ficheiro:
-//   A entrada/saída de dados
-//   As instâncias da classe da estrutura de dados
-//   A implementação dos comandos através dos métodos da classe
-//   Código auxiliar
-// nó da lista
-struct Node {
-    int data;
-    Node* next;
-};
-
 /*
 ** file: main-isll.cpp
 **
@@ -21,203 +10,121 @@ struct Node {
 */
 
 //   Não utilize variáveis globais
-#include <iostream>
+
+#include <ctype.h>
+#include <iostream> // std::cout
+#include <fstream>  // std::files
+#include <sstream>  // std::stringstream
+#include <string>   // std::string
 #include "isll.h"
 using namespace std;
+// Defina neste ficheiro:
+//   A entrada/saída de dados
+//   As instâncias da classe da estrutura de dados
+//   A implementação dos comandos através dos métodos da classe
+//   Código auxiliar
+//   nó da lista
 
-//void searchNode(int);
-//void insertAtBeginning(int);
-//void insertAtEnd(int);
-//void insertAtPosition(int, int);
-//void updateNode(int, int);
-//void deleteNode(int);
-//void displayList();
 
+struct Node {
+    int data;
+    Node* next;
+};
 
 // apontador para o primeiro nó da lista
 Node* head = nullptr;
-
 // contador de nós
 int C = 0;
 
-// funções para manipulação da lista
-void searchNode(int val) {
-    if (head == nullptr) {
-        cout << "Lista vazia\n";
-        return;
+/* Função para verificar se o input introduzido é comentário ou é um comando válido*/
+string validarComando(string comando){
+    if (comando[0] == '#' ) { // Se o comando for comentario
+        cout << "commentario"<< endl;
+        return "#"; // Linha a ignorar, pois é um linha de comentário
+    }else if(comando.length() == 0){ // Critério para garantir que existe um comando
+        return "comando não valido";
+    }else{ // Consideram-se que as restantes hipóteses serão comando, que ainda assim será processado na proxima função
+        return comando; // Devolve o comando, e continua a executar
     }
+};
 
-    Node* curr = head;
-    int pos = 0;
-    bool found = false;
+/* Função para ler cada linha do ficheiro, e executar o comando respetivo */
+void executarComando(string comando/*, ISLL& list*/){
 
-    while (curr != nullptr) {
-        if (curr->data == val) {
-            found = true;
-            break;
-        }
-        curr = curr->next;
-        pos++;
+    /* Para garantir que todas as letras introduzidas, sejam minúsculas */
+    char comandoValido; // Variavél para transformar o comando em mininusculas e garnatir que o comando é realizado
+
+
+    /* Em função do comando introduzido, a função deve ser executada corretamente */
+    if (comando == "insert_0") {
+        cout << "insert_0 inserido" << endl;
+        //insert_0(newData);
     }
-
-    if (found) {
-        cout << "Valor " << val << " encontrado na posição " << pos << endl;
-    } else {
-        cout << "Valor não encontrado\n";
+    else if (comando == "insert_end") {
+        cout << "insert_end inserido" << endl;
+        //insert_end(newData);
+    }
+    else if (comando == "print_0") {
+        cout << "print_0 inserido" << endl;
+        //print_0();
+    }
+    else if (comando == "print_end") {
+        cout << "print_end inserido" << endl;
+        //print_end();
+    }
+    else if (comando == "print") {
+        cout << "print inserido" << endl;
+        //print();
+    }
+    else if (comando == "delete_0") {
+        cout << "delete_0 inserido" << endl;
+        //delete_0();
+    }
+    else if (comando == "delete_end") {
+        cout << "delete_end inserido" << endl;
+        //delete_end();
+    }
+    else if (comando == "dim") {
+        cout << "dim inserido" << endl;
+        //dim();
+    }
+    else if (comando == "clear") {
+        cout << "clear inserido" << endl;
+        //clear();
+    }
+    else if (comando == "find") {
+        cout << "find inserido" << endl;
+        //find(newData);
+    }
+    else if (comando == "find_max") {
+        cout << "find_max inserido" << endl;
+        //find_max();
+    }
+    else if (comando == "delete_pos") {
+        cout << "delete_pos inserido" << endl;
+        //delete_pos(newData);
+    }
+    else if (comando == "invert_range") {
+        cout << "invert_range inserido" << endl;
+        //invert_range(comandoValido, newData, position1, position2);
+    }
+    else {
+        cout << "Comando " << comandoValido << ": Posicao invalida!\n" << endl;
     }
 }
 
-void insertNode(int val, int pos) {
-    if (pos < 0 || pos > C) {
-        cout << "Posição inválida\n";
-        return;
-    }
-
-    Node* newNode = new Node;
-    newNode->data = val;
-
-    if (pos == 0) {
-        newNode->next = head;
-        head = newNode;
-    } else {
-        Node* curr = head;
-        for (int i = 0; i < pos - 1; i++) {
-            curr = curr->next;
-        }
-        newNode->next = curr->next;
-        curr->next = newNode;
-    }
-
-    C++;
-}
-insertAtBeginning
-        insertAtEnd
-insertAtPosition
-void insertNodeEnd(int val) {
-    Node* newNode = new Node;
-    newNode->data = val;
-    newNode->next = nullptr;
-
-    if (head == nullptr) {
-        head = newNode;
-    } else {
-        Node* curr = head;
-        while (curr->next != nullptr) {
-            curr = curr->next;
-        }
-        curr->next = newNode;
-    }
-
-    C++;
-}
-
-void updateNode(int val, int pos) {
-    if (pos < 0 || pos >= C) {
-        cout << "Posição inválida\n";
-        return;
-    }
-
-    Node* curr = head;
-    for (int i = 0; i < pos; i++) {
-        curr = curr->next;
-    }
-
-    curr->data = val;
-}
-
-void deleteNode(int val) {
-    if (head == nullptr) {
-        cout << "Lista vazia\n";
-        return;
-    }
-
-    Node* curr = head;
-    Node* prev = nullptr;
-
-    while (curr != nullptr && curr->data != val) {
-        prev = curr;
-        curr = curr->next;
-    }
-
-    if (curr == nullptr) {
-        cout << "Valor não encontrado\n";
-        return;
-    }
-
-    if (prev == nullptr) {
-        head = curr->next;
-    } else {
-        prev->next = curr->next;
-    }
-
-    delete curr;
-    C--;
-}
-
-void displayList(int val) {
-
-}
 
 int main(){
    ISll list;   // exemplo
-    int choice, data, position, newData;
+    string comando;
 
-    while (true) {
-        cout << "Selecione uma opcao:" << endl;
-        cout << "1. Inserir no inicio da lista" << endl;
-        cout << "2. Inserir no fim da lista" << endl;
-        cout << "3. Inserir em uma posicao especifica" << endl;
-        cout << "4. Remover um no" << endl;
-        cout << "5. Procurar um no" << endl;
-        cout << "6. Atualizar um no" << endl;
-        cout << "7. Mostrar lista" << endl;
-        cout << "8. Sair" << endl;
+    ifstream cin1("testes.txt"); //Escolher ficheiro de testes
+    cin>>comando;
 
-        cin >> choice;
-
-        switch (choice) {
-            case 1:
-                cout << "Digite o valor a ser inserido: ";
-                cin >> data;
-                insertAtBeginning(data);
-                break;
-            case 2:
-                cout << "Digite o valor a ser inserido: ";
-                cin >> data;
-                insertAtEnd(data);
-                break;
-            case 3:
-                cout << "Digite o valor a ser inserido: ";
-                cin >> data;
-                cout << "Digite a posicao da lista para inserir: ";
-                cin >> position;
-                insertAtPosition(data, position);
-                break;
-            case 4:
-                cout << "Digite o valor a ser removido: ";
-                cin >> data;
-                deleteNode(data);
-                break;
-            case 5:
-                cout << "Digite o valor a ser procurado: ";
-                cin >> data;
-                searchNode(data);
-                break;
-            case 6:
-                cout << "Digite o valor a ser atualizado: ";
-                cin >> data;
-                cout << "Digite o novo valor: ";
-                cin >> newData;
-                updateNode(data, newData);
-                break;
-            case 7:
-                displayList();
-                break;
-            case 8:
-                exit(0);
-            default:
-                cout << "Opcao invalida!" << endl;
-        }
+    while(getline(cin1, comando)) {
+        string comandoValido = validarComando(comando);
+        cout << "Comando obtido: " << comandoValido << endl;
+        executarComando(comandoValido/*, list*/);
     }
     return 0;
 }
