@@ -37,25 +37,24 @@ using namespace std;
 Node* head = nullptr;
 // contador de nós
 int C = 0;
-//TODO: construir cada
 
 // Funções para manipulação da lista
 // 1. Inserir no inicio da lista
-void insert_0(int pos) {
+void insert_0(int i, int i1) {
     int val = 0;
-    if (pos < 0 || pos > C) {
+    if (i < 0 || i > C) {
         cout << "Posição inválida\n";
         return;
     }
     Node* newNode = new Node;
     newNode->data = val;
 
-    if (pos == 0) {
+    if (i == 0) {
         newNode->next = head;
         head = newNode;
     } else {
         Node* curr = head;
-        for (int i = 0; i < pos - 1; i++) {
+        for (int i = 0; i < i - 1; i++) {
             curr = curr->next;
         }
         newNode->next = curr->next;
@@ -258,7 +257,7 @@ int main(){
         cout << "13. Inverter a ordem dos itens da lista a partir da posicao 1 ate a posicao indicada: -> invert_range pos1 pos2" << endl;
         cout << "Escolher a opcao: " << endl;
         cin >> choice;
-        //TODO : Corrigir o problema do switch
+
         switch (choice) {
             case 'insert_0': // 1. Inserir no inicio da lista -> insert_0 item
                 insert_0(newData);

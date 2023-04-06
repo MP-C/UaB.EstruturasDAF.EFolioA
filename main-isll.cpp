@@ -31,34 +31,48 @@ struct Node {
     Node* next;
 };
 
+
 // apontador para o primeiro nó da lista
 Node* head = nullptr;
 // contador de nós
 int C = 0;
 
+/* Para garantir que no caso do utilizador tenha introduzido um caracter maiúsculo por engano
+ * esta função permite transformar a entrada em minusculas */
+string transformarMinusculas(string comando) {
+    string result="";
+    for (int i = 0; i < comando.length(); i++) {
+        result[i] = tolower(comando[i]);// Lê cada letra do comando de forma interária até terminar a string
+        cout<<result[i]<< endl;
+    }
+    return result;
+}
+
 /* Função para verificar se o input introduzido é comentário ou é um comando válido*/
 string validarComando(string comando){
     if (comando[0] == '#' ) { // Se o comando for comentario
-        cout << "commentario"<< endl;
+        cout << "comentario"<< endl;
         return "#"; // Linha a ignorar, pois é um linha de comentário
     }else if(comando.length() == 0){ // Critério para garantir que existe um comando
         return "comando não valido";
     }else{ // Consideram-se que as restantes hipóteses serão comando, que ainda assim será processado na proxima função
+        //string minusculas = transformarMinusculas(comando);
         return comando; // Devolve o comando, e continua a executar
     }
 };
 
 /* Função para ler cada linha do ficheiro, e executar o comando respetivo */
-void executarComando(string comando/*, ISLL& list*/){
-
+void executarComando(string comando, ISll& list){
     /* Para garantir que todas as letras introduzidas, sejam minúsculas */
     char comandoValido; // Variavél para transformar o comando em mininusculas e garnatir que o comando é realizado
-
 
     /* Em função do comando introduzido, a função deve ser executada corretamente */
     if (comando == "insert_0") {
         cout << "insert_0 inserido" << endl;
-        //insert_0(newData);
+        list.insert_0(1, C);
+        list.insert_0(3, C);
+        list.insert_0(2, C);
+        list.insert_0(5, C);
     }
     else if (comando == "insert_end") {
         cout << "insert_end inserido" << endl;
@@ -74,7 +88,7 @@ void executarComando(string comando/*, ISLL& list*/){
     }
     else if (comando == "print") {
         cout << "print inserido" << endl;
-        //print();
+        list.print(1, 2);
     }
     else if (comando == "delete_0") {
         cout << "delete_0 inserido" << endl;
@@ -116,15 +130,14 @@ void executarComando(string comando/*, ISLL& list*/){
 
 int main(){
    ISll list;   // exemplo
-    string comando;
+    string comando = "";
+    //ifstream cin1("testes.txt"); //Escolher ficheiro de testes
+    //cin>>comando;
 
-    ifstream cin1("testes.txt"); //Escolher ficheiro de testes
-    cin>>comando;
-
-    while(getline(cin1, comando)) {
+    while(getline(cin, comando)) {
         string comandoValido = validarComando(comando);
         cout << "Comando obtido: " << comandoValido << endl;
-        executarComando(comandoValido/*, list*/);
+        executarComando(comandoValido, list);
     }
     return 0;
 }

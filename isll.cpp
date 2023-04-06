@@ -14,32 +14,26 @@
 
 #include "isll.h"
 
+// Funções para manipulação da lista
+// 1. Inserir no inicio da lista
+void ISll::insert_0(int val, int contador) {
+    INode* newNode = new INode;
+    newNode->item = val;
 
-//// Funções para manipulação da lista
-//// 1. Inserir no inicio da lista
-//void insert_0(int pos) {
-//    int val = 0;
-//    if (pos < 0 || pos > C) {
-//        cout << "Posição inválida\n";
-//        return;
-//    }
-//    Node* newNode = new Node;
-//    newNode->data = val;
-//
-//    if (pos == 0) {
-//        newNode->next = head;
-//        head = newNode;
-//    } else {
-//        Node* curr = head;
-//        for (int i = 0; i < pos - 1; i++) {
-//            curr = curr->next;
-//        }
-//        newNode->next = curr->next;
-//        curr->next = newNode;
-//    }
-//
-//    C++;
-//}
+    cout << "inside NODE " << endl;
+    if (val == 0) {
+        newNode->next = head;
+        head = newNode;
+    } else {
+        INode* atual = head;
+        for (int i = 0; i < val - 1; i++) {
+            atual = atual->next;
+        }
+        newNode->next = atual->next;
+        atual->next = newNode;
+    }
+    contador ++;
+}
 //// 2. Inserir no fim da lista
 //void insert_end(int val) {
 //    Node* newNode = new Node;
@@ -58,21 +52,23 @@
 //
 //    C++;
 //}
+
 //// 3. Imprimir item do início da lista
 //void print_0(){
 //    int pos = 0;
 //    cout << "Lista(0)= "<<  pos << " \n" << endl;
 //}
+
 //// 4. Imprimir item do fim da lista
 //void print_end(){
 //    int pos = 3;
 //    cout << "Lista(end)= "<<  pos << " \n" << endl;
 //}
-//// 5. Imprimir toda lista
-//void print(){
-//    int pos = 0;
-//    cout << "Lista(0)= "<<  pos << " \n" << endl;
-//}
+
+// 5. Imprimir toda lista
+void ISll::print(int valor, int pos){
+    cout << "Lista= "<< pos << valor << " \n" << endl;
+}
 //// 6. Remover um nó do início da lista
 //void delete_0() {
 //    int val = 0;
