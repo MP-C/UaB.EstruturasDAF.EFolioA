@@ -40,27 +40,26 @@ private:
     // metodos atributos a corrigir
 
 public:
-    // construtor do nó
+    // construtor do nó com contador
     ISll(){
         n = 0;
         head = NULL;
         tail = NULL;
     }
-
-   void insert_0(string);
-   void insert_end(string);
-   void print_0(string);
-//   void print_end();
-   void print(string);
-   void delete_0();
-//   void delete_end();
-   void dim(string);
+    void insert_0(string);
+    void insert_end(string);
+    void print_0(string);
+    void print_end(string);
+    void print(string);
+    void delete_0(string);
+    void delete_end(string);
+    int dim(string);
     void clear(string);
     void find(string, string);
-//    void find_max();void delete_pos(int pos);
-//  void delete_pos(int pos);
-//    void invert_range(string cmd, int val, int pos1, int pos2);
-    void verificarListaTamanho(); // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
+    void find_max(string, string);
+    void delete_pos(string, string);
+    void invert_range(string, string);
+    void verificarListaTamanho(string cmd); // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
     bool verificarListaVazia(string); // verifica se a lista esta vazia e devolve frase de erro
     bool verificarPosicao(string, ISll, int); // verifica se a posicao não existe e devolve frase de erro
     int extrairItens(string);
