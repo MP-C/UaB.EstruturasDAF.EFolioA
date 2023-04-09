@@ -16,6 +16,7 @@
 #include <fstream>  // std::files
 #include <sstream>  // std::stringstream
 #include <string>   // std::string
+#include <stdlib.h>
 #include "isll.h"
 using namespace std;
 // Defina neste ficheiro:
@@ -48,96 +49,108 @@ string transformarMinusculas(string comando) {
     return result;
 }
 
-/* Função para verificar se o input introduzido é comentário ou é um comando válido*/
-string validarComando(string comando){
-    if (comando[0] == '#' ) { // Se o comando for comentario
-        cout << "comentario"<< endl;
-        return "#"; // Linha a ignorar, pois é um linha de comentário
-    }else if(comando.length() == 0){ // Critério para garantir que existe um comando
-        return "comando não valido";
-    }else{ // Consideram-se que as restantes hipóteses serão comando, que ainda assim será processado na proxima função
-        //string minusculas = transformarMinusculas(comando);
-        return comando; // Devolve o comando, e continua a executar
+/* Função para verificar se o input introduzido é comentário ou é um cmd válido*/
+string validarComando(string cmd){
+    if(cmd.length() == 0){ // Critério para garantir que existe um cmd
+        return "Introduzir um comando valido";
+    }else{
+        //string minusculas = transformarMinusculas(cmd);
+        return cmd;         // Devolve o cmd, e continua a executar
     }
 };
 
 /* Função para ler cada linha do ficheiro, e executar o comando respetivo */
-void executarComando(string comando, ISll& list){
+void executarComando(string comando, string argumentos, ISll& list) {
     /* Para garantir que todas as letras introduzidas, sejam minúsculas */
-    char comandoValido; // Variavél para transformar o comando em mininusculas e garnatir que o comando é realizado
+
+    cout << "argumentos " << argumentos << endl;
+    stringstream ssItems(argumentos);
 
     /* Em função do comando introduzido, a função deve ser executada corretamente */
-    if (comando == "insert_0") {
-        cout << "insert_0 inserido" << endl;
-        list.insert_0(1, C);
-        list.insert_0(3, C);
-        list.insert_0(2, C);
-        list.insert_0(5, C);
+    if (comando[0] == '#' ) {   // Se o cmd for comentario
+        while(comando== "#") {// Linha a ignorar, pois é um linha de comentário
+            continue;
+        }
+        // Consideram-se que as restantes hipóteses serão comandos, que ainda assim será processado na proxima função
     }
-    else if (comando == "insert_end") {
-        cout << "insert_end inserido" << endl;
-        //insert_end(newData);
+    else if (comando == "insert_0") {            // Insere no início da lista um novo nó
+        list.insert_0(argumentos);
     }
-    else if (comando == "print_0") {
-        cout << "print_0 inserido" << endl;
-        //print_0();
+    else if (comando == "insert_end"){      // Insere no fim da lista um novo nó
+        list.insert_end(argumentos);
     }
-    else if (comando == "print_end") {
+    else if (comando == "print_0") {        // Imprime apenas o nó do início da lista
+        ////cout << "print_0 inserido" << endl;
+        list.print_0(comando);
+    }
+    else if (comando == "print_end"){       // Imprime apenas o nó do fim da lista
         cout << "print_end inserido" << endl;
-        //print_end();
+        //list.print_end();
     }
-    else if (comando == "print") {
+    else if (comando == "print") {          // Imprime todos os nós da lista
         cout << "print inserido" << endl;
-        list.print(1, 2);
+        list.print(comando);
     }
-    else if (comando == "delete_0") {
+    else if (comando == "delete_0"){        // Apaga apenas o nó do início da lista
         cout << "delete_0 inserido" << endl;
-        //delete_0();
+        list.delete_0();
     }
-    else if (comando == "delete_end") {
+    else if (comando == "delete_end"){      // Apaga apenas o nó do fim da lista
         cout << "delete_end inserido" << endl;
-        //delete_end();
+        //list.delete_end();
     }
-    else if (comando == "dim") {
+    else if (comando == "dim"){             // Imprime o número total de itens na lista.
         cout << "dim inserido" << endl;
-        //dim();
+        list.dim(comando);
     }
-    else if (comando == "clear") {
+    else if (comando == "clear") {          //  Remove todos os nós da lista
         cout << "clear inserido" << endl;
-        //clear();
+        list.clear(comando);
     }
-    else if (comando == "find") {
+    else if (comando == "find") {           // Procura a primeira ocorrência do item na lista e imprime a sua posição
         cout << "find inserido" << endl;
-        //find(newData);
+        list.find(comando,argumentos);
     }
-    else if (comando == "find_max") {
+    else if (comando == "find_max") {       // Procura a primeira ocorrência do maior item na lista e imprime a sua posição
         cout << "find_max inserido" << endl;
-        //find_max();
+        //list.find_max();
     }
-    else if (comando == "delete_pos") {
-        cout << "delete_pos inserido" << endl;
-        //delete_pos(newData);
+    else if (comando == "delete_pos") {     // Remove um nó da posição pos da lista
+        cout << "delete_pos inserido" << endl;;
+        //list.delete_pos(newData);
     }
-    else if (comando == "invert_range") {
+    else if (comando == "invert_range") { // Inverte a ordem dos itens a partir da posição pos1 até à posição pos2 (inclusive) da lista
         cout << "invert_range inserido" << endl;
-        //invert_range(comandoValido, newData, position1, position2);
+        //list.invert_range(comandoValido, newData, position1, position2);
     }
     else {
-        cout << "Comando " << comandoValido << ": Posicao invalida!\n" << endl;
+            cout << "O comando introduzido nao e invalido.\n" << endl;
     }
+    //argumentos = ""; // Para limpar a lista de argumentos e não as misturar assim que são guardados
 }
 
 
 int main(){
-   ISll list;   // exemplo
-    string comando = "";
+    ISll list;   // exemplo
+    string input, cmd, listaArgumentos;
+    //int pos = 0; // Posição de argumentos da listaArgumentos
     //ifstream cin1("testes.txt"); //Escolher ficheiro de testes
-    //cin>>comando;
 
-    while(getline(cin, comando)) {
-        string comandoValido = validarComando(comando);
-        cout << "Comando obtido: " << comandoValido << endl;
-        executarComando(comandoValido, list);
+    /* Para que seja lida cada linha introduzida de maneira individual */
+    while(getline(cin, input)) {
+        /* Para extrair o comando */
+        stringstream ssInput(input);
+        ssInput >> cmd;
+        string item;
+        while (ssInput >> item) {
+            ////cout << "item "<<item<< endl;
+            listaArgumentos += item + " ";
+        }
+        /* Verifica que o comando introduzido é válido*/
+        string comandoValido = validarComando(cmd);
+
+        /* Procurar e executar cada comando valido com os respetivos argumentos guardados em input */
+        executarComando(comandoValido, listaArgumentos, list);
     }
     return 0;
 }

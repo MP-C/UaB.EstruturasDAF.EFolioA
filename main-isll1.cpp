@@ -315,6 +315,32 @@ int main(){
         }
         file.close();
         }
+
+
+
+    /* Para guardar os argumentos recebidos de forma isolada a partir do método de extração
+        * realizado de seguinda */
+    /*char separator = ' ';                     //separar argumentos do comando
+    string args;           // Guardar os numeros em Int depois de transformados
+    stringstream ssLinha(input);
+    cout<< "comandoLinha " <<input<< endl;
+    ssLinha >> args;
+    cout<< "args " <<args<< endl;
+    string argString[input.length()];  // Guarda os numeros provenientes de char
+    int argumentos[input.length()];
+    int posicaoArgs = 0;
+    for (int i = 1; i < comandoLinha.length(); i++) {
+        if (comandoLinha[i] == separator) {
+            posicaoArgs++;
+        } else {
+            argString[posicaoArgs] += comandoLinha[i];
+            argumentos[posicaoArgs] = stoi(argString[posicaoArgs]); //Transforma a string em inteiro guardando os dados de cada argumento
+            cout << "Argumento " << argumentos[posicaoArgs] << endl; // Usar o índice posicaoArguments
+        }
+    }
+    //extractor com ss int temporario com args[i]
+*/
+
     return 0;
 }
 

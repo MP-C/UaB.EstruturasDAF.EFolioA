@@ -35,8 +35,9 @@ private:
    // atributos obrigatórios
    int n;                // dimensão atual da lista
    // outros atributos e métodos (protótipos) livres
-    INode* head; // ponteiro do inicial de lista
-    INode* tail; // ponteiro do fim da lista
+    INode* head;         // ponteiro do inicial de lista
+    INode* tail;         // ponteiro do fim da lista
+    // metodos atributos a corrigir
 
 public:
     // construtor do nó
@@ -46,20 +47,23 @@ public:
         tail = NULL;
     }
 
-   void insert_0(int, int);
-//   void insert_end(int val);
-//   void print_0();
+   void insert_0(string);
+   void insert_end(string);
+   void print_0(string);
 //   void print_end();
-   void print(int, int);
-//   void delete_0();
-//   void delete_end();void dim();
-//   void clear();
-//   void find(int val);
-//   void find_max();void delete_pos(int pos);
-//   void invert_range(string cmd, int val, int pos1, int pos2);
-//   void verificarListaTamanho(); // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
-//   void verificarSeListaVazia(); // verifica se a lista esta vazia e devolve true se afirmativo
-
+   void print(string);
+   void delete_0();
+//   void delete_end();
+   void dim(string);
+    void clear(string);
+    void find(string, string);
+//    void find_max();void delete_pos(int pos);
+//  void delete_pos(int pos);
+//    void invert_range(string cmd, int val, int pos1, int pos2);
+    void verificarListaTamanho(); // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
+    bool verificarListaVazia(string); // verifica se a lista esta vazia e devolve frase de erro
+    bool verificarPosicao(string, ISll, int); // verifica se a posicao não existe e devolve frase de erro
+    int extrairItens(string);
 };
 
 // EOF
