@@ -15,8 +15,6 @@
 #include "isll.h"
 
 // Funções para manipulação da lista
-
-
 // 1. Inserir no inicio da lista // TODO : quase OK!!
 void ISll::insert_0(string argumentos) {
     /* Para extrair os argumentos de cada comando*/
@@ -32,7 +30,6 @@ void ISll::insert_0(string argumentos) {
         }
         n++;                            // aumenta o contador
     }
-    argumentos="";// TODO problema NÃO FUNCIONA
 }
 
 // 2. Inserir no fim da lista // TODO problema insere no fim, mas não apaga o que ficou em memória, e no proximo insertXX insere os novos e anteriores
@@ -59,7 +56,6 @@ void ISll::insert_end(string argumentos) {
         }
         n++;                                // aumenta o contador que serve de leitura do tamanho
     }
-    argumentos="";      // TODO problema NÃO FUNCIONA
 }
 /*INode *newNode = new INode(value, nullptr);
         if (head == nullptr) {
@@ -130,7 +126,6 @@ void ISll::delete_0(string cmd) {       //TODO problema : Apaga sempre mais do q
 //        atual = atual->next;
 //    }
 
-
 // 7. Remover um nó do fim da lista //TODO parece OK!
 void ISll::delete_end(string cmd) {
     if(verificarListaVazia(cmd) == false) {// Verifica se a lista está vazia antes de tentar remover um elemento
@@ -192,7 +187,6 @@ void ISll::find(string cmd, string argumentos) {
         cout << "Item " << item << " não encontrado!\n" << endl;// se chegou aqui, o item não foi encontrado
     }
 }
-
 
 // 11. Procurar a primeira ocorrência do maior item na lista e imprimir posição
 void ISll::find_max(string cmd, string argumento){ //TODO devia estar a funcionar..mas não está! as vezes bate certo...aaaaaaahhhhhh!
@@ -276,7 +270,6 @@ void ISll::invert_range(string cmd, string argumentos){ //TODO Atribuir oss valo
     }
 }
 
-
 /* Para verificar se a lista esta vazia, com devolução de um booleano */
     bool ISll::verificarListaVazia(string cmd){ //TODO problema se comandos : insert_end 0 1 2;  print ; dim => diz que a lista está vazia, no entanto está com items
         /* Se a lista não está vazia, é porque tem pelo menos 1 nó.
@@ -291,7 +284,7 @@ void ISll::invert_range(string cmd, string argumentos){ //TODO Atribuir oss valo
     }
 
 
-    /*  NÃO UTILIZADOS */
+    ////*  NÃO UTILIZADOS */
 //TODO a implementar se necessário para encontrar posição para o Find, item OU Delete_pos => MENSSAGEM DE APARECER!!
 // Mas a messagem também pode apareccer de outra maneira
     bool ISll::verificarPosicao(string cmd, ISll list, int pos) {
