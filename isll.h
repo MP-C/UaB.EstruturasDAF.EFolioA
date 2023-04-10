@@ -53,7 +53,7 @@ public:
     void print(string);
     void delete_0(string);
     void delete_end(string);
-    int dim(string);
+    void dim(string);
     void clear(string);
     void find(string, string);
     void find_max(string, string);

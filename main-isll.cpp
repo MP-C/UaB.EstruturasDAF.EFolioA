@@ -64,7 +64,6 @@ void executarComando(string comando, string argumentos, ISll& list) {
     /* Para garantir que todas as letras introduzidas, sejam minúsculas */
 
     cout << "lista de argumentos que não está a ser apagada depois de usada: " << argumentos << endl;
-    stringstream ssItems(argumentos);
 
     /* Em função do comando introduzido, a função deve ser executada corretamente */
     if (comando[0] == '#' ) {   // Se o cmd for comentario
@@ -85,53 +84,53 @@ void executarComando(string comando, string argumentos, ISll& list) {
         argumentos="";
     }
     else if (comando == "print_end"){       // Imprime apenas o nó do fim da lista
-        cout << "print_end inserido" << endl;
+        //cout << "print_end inserido" << endl;
         list.print_end(comando);
         argumentos="";
     }
     else if (comando == "print") {          // Imprime todos os nós da lista
-        cout << "print inserido" << endl;
+        //cout << "print inserido" << endl;
         list.print(comando);
         argumentos="";
     }
     else if (comando == "delete_0"){        // Apaga apenas o nó do início da lista
-        cout << "delete_0 inserido" << endl;
+        //cout << "delete_0 inserido" << endl;
         list.delete_0(comando);
     }
     else if (comando == "delete_end"){      // Apaga apenas o nó do fim da lista
-        cout << "delete_end inserido" << endl;
+        //cout << "delete_end inserido" << endl;
         list.delete_end(comando);
     }
     else if (comando == "dim"){             // Imprime o número total de itens na lista.
-        cout << "dim inserido" << endl;
+        //cout << "dim inserido" << endl;
         list.dim(comando);
     }
     else if (comando == "clear") {          //  Remove todos os nós da lista
-        cout << "clear inserido" << endl;
+        //cout << "clear inserido" << endl;
         list.clear(comando);
     }
     else if (comando == "find") {           // Procura a primeira ocorrência do item na lista e imprime a sua posição
-        cout << "find inserido" << endl;
+        //cout << "find inserido" << endl;
         list.find(comando,argumentos);
     }
     else if (comando == "find_max") {       // Procura a primeira ocorrência do maior item na lista e imprime a sua posição
-        cout << "find_max inserido" << endl;
+        //cout << "find_max inserido" << endl;
         list.find_max(comando,argumentos);
         argumentos="";
     }
     else if (comando == "delete_pos") {     // Remove um nó da posição pos da lista
-        cout << "delete_pos inserido" << endl;;
+        //cout << "delete_pos inserido" << endl;;
         list.delete_pos(comando, argumentos);
         argumentos="";
     }
     else if (comando == "invert_range") { // Inverte a ordem dos itens a partir da posição pos1 até à posição pos2 (inclusive) da lista
-        cout << "invert_range inserido" << endl;
+        //cout << "invert_range inserido" << endl;
         list.invert_range(comando, argumentos);
     }
     else {
-            cout << "O comando introduzido nao e invalido.\n" << endl;
+        cout << "O comando introduzido nao e invalido.\n" << endl;
     }
-    //argumentos = ""; // TODO probelam: Não limpa // Para limpar a lista de argumentos e não as misturar assim que são guardados
+    argumentos = ""; // TODO probelam: Não limpa // Para limpar a lista de argumentos e não as misturar assim que são guardados
 }
 
 
