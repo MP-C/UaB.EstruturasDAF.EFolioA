@@ -35,9 +35,9 @@ private:
    // atributos obrigatórios
    int n;                // dimensão atual da lista
    // outros atributos e métodos (protótipos) livres
-    INode* head;         // ponteiro do inicial de lista
-    INode* tail;         // ponteiro do fim da lista
-    // metodos atributos a corrigir
+   INode* head;         // ponteiro do inicial de lista
+   INode* tail;         // ponteiro do fim da lista
+   // metodos atributos a corrigir
 
 public:
     // construtor do nó com contador
@@ -53,17 +53,13 @@ public:
     void print(string);
     void delete_0(string);
     void delete_end(string);
-    void dim(string);
+    void dim(string);           // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
     void clear(string);
     void find(string, string);
     void find_max(string, string);
     void delete_pos(string, string);
     void invert_range(string, string);
-    void verificarListaTamanho(string cmd); // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
-    bool verificarListaVazia(string); // verifica se a lista esta vazia e devolve frase de erro
-    bool verificarPosicao(string, ISll, int); // verifica se a posicao não existe e devolve frase de erro
-    int extrairItens(string);
+    bool verificarListaVazia(string);       // verifica se a lista esta vazia e devolve frase de erro
+    bool posicaoValida(string, int, int);         // verifica se a posicao não existe e devolve frase de erro
 };
-
 // EOF
-

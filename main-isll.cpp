@@ -41,21 +41,16 @@ string validarComando(string cmd){
     if(cmd.length() == 0){ // Critério para garantir que existe um cmd
         return "Introduzir um comando valido";
     }else{
-        ////string minusculas = transformarMinusculas(cmd);
         return cmd;         // Devolve o cmd, e continua a executar
     }
 }
 
 /* Função para ler cada linha do ficheiro, e executar o comando respetivo */
 void executarComando(string comando, string argumentos, ISll& list) {
-    /* Para garantir que todas as letras introduzidas, sejam minúsculas */
-    ///cout << "lista de argumentos que nao esta a ser apagada depois de usada: " << argumentos << endl;
-
     /* Em função do comando introduzido, a função deve ser executada corretamente */
     if (comando[0] == '#' ) {   // Se o cmd for comentario e
         while(comando== "#") {  // o resto da linha é completamente ignorada, pois é um linha de comentário
         // Consideram-se que todas as restantes hipóteses serão comandos, que ainda assim serão processados na proxima iteração
-            ///continue;
         }
     }
     else if (comando == "insert_0") {       // Insere no início da lista um novo nó
@@ -100,18 +95,14 @@ void executarComando(string comando, string argumentos, ISll& list) {
     else {
         cout << "O comando introduzido nao e invalido.\n" << endl;
     }
-    argumentos = ""; // Para limpar os argumentos e não as misturar assim que são guardados
+    return;
 }
 
 
 int main(){
-    ISll list;   // exemplo
+    ISll list; // Para utilizar os nós de list
     string input, cmd, listaArgumentos;
-//    ifstream testes("testes.txt"); //Escolher ficheiro de testes
-//    if (!testes.is_open()) {
-//        cout << "Erro ao abrir o arquivo" << endl;
-//        return 1;
-//    }
+
     /* Para que seja lida cada linha introduzida de maneira individual */
     while(getline(cin/*testes*/, input)) {
         /* Para extrair o comando */
