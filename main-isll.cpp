@@ -41,7 +41,7 @@ string validarComando(string cmd){
     if(cmd.length() == 0){ // Critério para garantir que existe um cmd
         return "Introduzir um comando valido";
     }else{
-        return cmd;         // Devolve o cmd, e continua a executar
+        return cmd;        // Devolve o cmd, e continua a executar
     }
 }
 

@@ -46,20 +46,20 @@ public:
         head = NULL;
         tail = NULL;
     }
-    void insert_0(string);
-    void insert_end(string);
-    void print_0(string);
-    void print_end(string);
-    void print(string);
-    void delete_0(string);
-    void delete_end(string);
-    void dim(string);           // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
-    void clear(string);
-    void find(string, string);
-    void find_max(string, string);
-    void delete_pos(string, string);
-    void invert_range(string, string);
-    bool verificarListaVazia(string);       // verifica se a lista esta vazia e devolve frase de erro
-    bool posicaoValida(string, int, int);         // verifica se a posicao não existe e devolve frase de erro
+    void insert_0(string);                  // 1. Inserir argumentos no inicio da lista
+    void insert_end(string);                // 2. Inserir argumentos no fim da lista
+    void print_0(string);                   // 3. Imprimir item do início da lista
+    void print_end(string);                 // 4. Imprimir item do fim da lista
+    void print(string);                     // 5. Imprimir toda lista
+    void delete_0(string);                  // 6. Remover o nó do início da lista. Apenas e necessário verificar se a lista está vazia ou não
+    void delete_end(string);                // 7. Remover um nó do fim da lista
+    void dim(string);                       // 8. Imprimir o número total de itens na lista
+    void clear(string);                     // 9. Remover os nós da lista
+    void find(string, string);              // 10. Procurar a primeira ocorrência do item na lista e imprimir posição
+    void find_max(string, string);          // 11. Procurar a primeira ocorrência do maior item na lista e imprimir posição
+    void delete_pos(string, string);        // 12. Remover um nó da posição da lista
+    void invert_range(string, string);      // 13. Inverter a ordem dos itens da lista a partir da posição 1 até à posição indicada
+    bool verificarListaVazia(string);       // Verifica se a lista esta vazia e devolve frase de erro
+    bool posicaoValida(string, int, int);   // Verifica se a posicao não existe e devolve frase de erro
 };
 // EOF
