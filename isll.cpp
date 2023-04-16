@@ -200,7 +200,7 @@ void ISll::find_max(string cmd, string argumento){ //TODO devia estar a funciona
         while (atual != NULL) {
             if (atual->item > valorMaximo) {
                 valorMaximo = atual->item; // Atualiza o valor máximo encontrado
-                pos++;                     // Atualiza a posição do valor máximo encontrado
+                //pos++;                     // Atualiza a posição do valor máximo encontrado
             }
             atual = atual->next;           // Avança para o próximo elemento da lista
             pos++;                         // Atualiza a posição do elemento atual
