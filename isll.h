@@ -60,6 +60,6 @@ public:
     void delete_pos(string, string);        // 12. Remover um nó da posição da lista
     void invert_range(string, string);      // 13. Inverter a ordem dos itens da lista a partir da posição 1 até à posição indicada
     bool verificarListaVazia(string);       // Verifica se a lista esta vazia e devolve frase de erro
-    bool posicaoValida(string, int, int);   // Verifica se a posicao não existe e devolve frase de erro
+    bool posicaoValida(string, int, int);   // Verifica se a posição não existe e devolve frase de erro
 };
 // EOF
