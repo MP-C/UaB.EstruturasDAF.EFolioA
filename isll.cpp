@@ -98,20 +98,6 @@ void ISll::delete_0(string cmd) {       //TODO problema : Apaga sempre mais do q
     }
     n--;
 }
-//    INode *ptr = head;
-//    if(ptr == head) {
-//        head = ptr->next;//        return;
-//    }
-//    INode *atual = head;
-//    INode *anterior = head;
-//    while(atual) {
-//        if(atual == ptr) {
-//            anterior->next = atual->next;
-//            return;
-//        }
-//        anterior = atual;
-//        atual = atual->next;
-//    }
 
 /* 7. Remover um nó do fim da lista */
 void ISll::delete_end(string cmd) {
@@ -122,18 +108,6 @@ void ISll::delete_end(string cmd) {
             head = tail = nullptr;        // Atualiza head e tail
             n = 0;                        // Atualiza contador
         }else{
-            /*
-            // Se a lista tem mais de um elemento, percorre a lista até chegar ao penúltimo elemento
-            while(temporario->next != tail) {
-                temporario = temporario->next;
-            }
-            // e atualiza tail para o penúltimo elemento, removendo o último elemento
-            delete tail;                  // Remove tail
-            tail = temporario;            // Atualiza tail
-            tail->next = NULL;            // Atualiza tail
-            delete temporario;            // Apaga o temporário para libertar memória
-            n--;                          // Atualiza contador
-             */
             /* Criar nós temporários, que são usados para repor o valor assim que o último é apagado */
             INode *inicio = head;         // Cria um ponteiro "inicio" que aponta para o primeiro elemento da lista (head)
             INode *anterior = NULL;       // Cria um ponteiro "anterior" que apontará para o elemento anterior ao último
@@ -142,6 +116,7 @@ void ISll::delete_end(string cmd) {
                 inicio = inicio->next;    // Move o ponteiro para o próximo nó da lista
             }
             anterior->next = NULL;        // Atribui NULL ao ponteiro next do penúltimo elemento
+            tail = anterior;              // Para declarar que o ultimo elemento não se perde
             delete inicio;                // Elimina o último elemento da lista
             n--;                          // Decrementa o número de elementos da lista
         }
@@ -161,13 +136,6 @@ void ISll::clear(string cmd) {
         n = 0;                                  // Repor valores a zero
         head = NULL;                            // Repor valores a vazio
         tail = NULL;                            // Repor valores a vazio
-        /*
-        INode *temporario = head;
-        while(temporario != NULL) {
-            INode *auxiliarClear = temporario;
-            temporario = temporario->next;
-            delete auxiliarClear;
-        }*/
     }
 }
 
@@ -199,21 +167,10 @@ void ISll::find_max(string cmd, string argumento){ //TODO devia estar a funciona
         INode* atual = head->next;          // Começa a procurar pelo valor máximo a partir do segundo elemento da lista
         while (atual != NULL) {
             if (atual->item > valorMaximo) {
-                valorMaximo = atual->item; // Atualiza o valor máximo encontrado
-                //pos++;                     // Atualiza a posição do valor máximo encontrado
+                valorMaximo = atual->item;  // Atualiza o valor máximo encontrado
+                posMax = pos;               // Atualiza a posição do valor máximo encontrado
             }
-            atual = atual->next;           // Avança para o próximo elemento da lista
-            pos++;                         // Atualiza a posição do elemento atual
-            /**
-             * !ATENÇÃO as posições começam no 0
-             * da mesma maneira que tens o valorMaximo,
-             * tens de ter uma var que fique
-             * com o valor da posição, por exemplo,
-             * (linha 206 em vez do pos++;?)
-             * devias ter posItem = pos;
-             * porqeu neste momento mesmo quando encontra valor máximo
-             * ele continua a incrementar o pos.
-             */
+            atual = atual->next;            // Avança para o próximo elemento da lista
         }
         cout << "Max Item " << valorMaximo << " na posicao " << pos << "!\n" << endl; // Imprime o valor máximo e sua posição na lista
     }
@@ -341,10 +298,10 @@ bool ISll::verificarListaVazia(string cmd){ //TODO problema se comandos : insert
 
 /* Para verificar se a posicao que está a ser procurada existe (devolvendo booleano "True"), se não for encontrada, devolve frase de erro */
 bool ISll::posicaoValida(string cmd, int posicao, int tamanho) {
-    if(posicao > 0 || posicao <= tamanho){
+    if(posicao >= 0 && posicao < tamanho){
        return true;
     }else{
-        cout << "Comando " << cmd << "Posicao invalida!\n" << endl;
+        cout << "Comando " << cmd << " : Posicao invalida!\n" << endl;
         return false;
     }
 }
