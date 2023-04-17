@@ -89,7 +89,7 @@ void ISll::print(string cmd) {
 }
 
 /* 6. Remover o nó do início da lista. Apenas e necessário verificar se a lista está vazia ou não*/
-void ISll::delete_0(string cmd) {       //TODO problema : Apaga sempre mais do que o primeiro elemento (ou tudo) ou não apaga nada apos vários inserts
+void ISll::delete_0(string cmd) {
     if (verificarListaVazia(cmd) == false) {   // Verifica se a lista está vazia
         INode *p;                       // Criar novo nó
         p = head->next;                 // p fica com o próximo valor
@@ -129,7 +129,7 @@ void ISll::dim(string cmd) { // verifica qual é o tamanho da lista, e devolve o
     cout << "Lista tem "<<  n << " itens\n" << endl; // Imprime o contador "tamanho" atualizado da quantidade de nós contados na lista
 }
 
-/* 9. Remover os nós da lista */  //TODO: OK!!?
+/* 9. Remover os nós da lista */
 void ISll::clear(string cmd) {
     if (verificarListaVazia(cmd) == false){ // Verifica se a lista está vazia
         /* E apaga de forma recursiva toda e qualquer informação que tenha, começado no "head" e indo até "tail" */
@@ -160,7 +160,7 @@ void ISll::find(string cmd, string argumentos) {
 }
 
 /* 11. Procurar a primeira ocorrência do maior item na lista e imprimir posição */
-void ISll::find_max(string cmd, string argumento){ //TODO devia estar a funcionar..mas não está! as vezes bate certo...aaaaaaahhhhhh!
+void ISll::find_max(string cmd, string argumento){
     if(verificarListaVazia(cmd) == false) {
         int pos = 0; //1                    // Inicia a contagem das posições a partir de 0
         int valorMaximo = head->item;       // Inicia o valor máximo com o primeiro valor da lista
@@ -177,7 +177,7 @@ void ISll::find_max(string cmd, string argumento){ //TODO devia estar a funciona
 }
 
 /* 12. Remover um nó da posição da lista */
-void ISll::delete_pos(string cmd, string argumentos){ //TODO Nao funciona sempre nem a mensagem
+void ISll::delete_pos(string cmd, string argumentos){
     stringstream ssItems(argumentos);
     int pos;
     while(ssItems >> pos) {
@@ -208,7 +208,7 @@ void ISll::delete_pos(string cmd, string argumentos){ //TODO Nao funciona sempre
 }
 
 /* 13. Inverter a ordem dos itens da lista a partir da posição 1 até à posição indicada */
-void ISll::invert_range(string cmd, string argumentos){ //TODO Atribuir oss valores para cada posião
+void ISll::invert_range(string cmd, string argumentos){
     stringstream ssItems(argumentos);
     int pos1;
     int pos2;
@@ -284,7 +284,7 @@ void ISll::invert_range(string cmd, string argumentos){ //TODO Atribuir oss valo
 }
 
 /* Para verificar se a lista esta vazia, com devolução de um booleano: "True" se estiver vazia, "False" se estiver preenchida */
-bool ISll::verificarListaVazia(string cmd){ //TODO problema se comandos : insert_end 0 1 2;  print ; dim => diz que a lista está vazia, no entanto está com items
+bool ISll::verificarListaVazia(string cmd){
     /* Se a lista não está vazia, é porque tem pelo menos 1 nó.
      * Se unico, então é primeiro e último ao mesmo tempo e nesse
      * caso não está vazia mas com um elemento */
