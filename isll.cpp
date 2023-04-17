@@ -56,7 +56,7 @@ void ISll::insert_end(string argumentos) {
 
 /* 3. Imprimir item do início da lista */
 void ISll::print_0(string cmd){
-    if (verificarListaVazia(cmd) == false){   // Verifica se a lista está vazia
+    if (verificarListaVazia(cmd) == false){// Verifica se a lista está vazia
         cout << "Lista(0)= "<<  head->item   << " \n" << endl;
     }
 }
@@ -64,8 +64,8 @@ void ISll::print_0(string cmd){
 /* 4. Imprimir item do fim da lista */
 void ISll::print_end(string cmd){
     if (verificarListaVazia(cmd) == false){// Verifica se a lista está vazia
-        INode *atual = head;                    // Cria um ponteiro "atual" que aponta para o primeiro elemento da lista (head)
-        while (atual->next != nullptr) {        // Percorre a lista até encontrar o último elemento (cujo próximo ponteiro é nulo)
+        INode *atual = head;               // Cria um ponteiro "atual" que aponta para o primeiro elemento da lista (head)
+        while (atual->next != nullptr) {   // Percorre a lista até encontrar o último elemento (cujo próximo ponteiro é nulo)
             atual = atual->next;
         }
         /* Para imprimir tail apenas segundo as condições */
@@ -75,7 +75,7 @@ void ISll::print_end(string cmd){
 
 /* 5. Imprimir toda lista */
 void ISll::print(string cmd) {
-    if (verificarListaVazia(cmd) == false){   // Verifica se a lista está vazia
+    if (verificarListaVazia(cmd) == false){// Verifica se a lista está vazia
         INode *atual = head;               // Cria um ponteiro "atual" que aponta para o primeiro elemento da lista (head)
         if(head != NULL) {                 // Se não estiver vazia, continua a imprimir list até ao fim
             cout << "Lista= ";             // Imprimir a palavra pretendida
@@ -124,7 +124,7 @@ void ISll::delete_end(string cmd) {
 }
 
 /* 8. Imprimir o número total de itens na lista */
-void ISll::dim(string cmd) { // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
+void ISll::dim(string cmd) {                         // verifica qual é o tamanho da lista, e devolve o respetivo tamanho
     /* Não precisa de verificar que a lista está vazia, simplesmente imprime a lista, e será "0" se não tiver valores */
     cout << "Lista tem "<<  n << " itens\n" << endl; // Imprime o contador "tamanho" atualizado da quantidade de nós contados na lista
 }
@@ -141,23 +141,26 @@ void ISll::clear(string cmd) {
 
 /* 10. Procurar a primeira ocorrência do item na lista e imprimir posição */
 void ISll::find(string cmd, string argumentos) {
-    stringstream ssItems(argumentos);
-    int item;
+    stringstream ssItems(argumentos);               // Cria uma stringstream com os argumentos
+    int item;                                       // Variável para armazenar os itens lidos
 
-    while(ssItems >> item) {
-        int pos = 0;
-        INode *atual = head;
-        while (atual != NULL) {
-            if (atual->item == item) {
-                cout << "Item " << item << " na posicao " << pos << endl;
-                return;
+    while(ssItems >> item) {                        // Enquanto houver itens a serem lidos da stringstream
+        int pos = 0;                                // Variável para representar a posição do item na lista
+        INode *atual = head;                        // Ponteiro para o primeiro elemento da lista (head)
+
+        while (atual != NULL) {                     // Enquanto o ponteiro atual não for nulo, ou seja, enquanto houver nós na lista
+            if (atual->item == item) {              // Se o item do nó atual for igual ao item buscado
+                cout << "Item " << item << " na posicao " << pos << endl; // Imprime a posição do item na lista
+                return;                             // Retorna da função
             }
-            atual = atual->next;
-            pos++;
+
+            atual = atual->next;                    // Move o ponteiro para o próximo nó da lista
+            pos++;                                  // Incrementa a variável de posição
         }
-        cout << "Item " << item << " nao encontrado!\n" << endl;// se chegou aqui, o item não foi encontrado
+        cout << "Item " << item << " nao encontrado!\n" << endl; // Se chegou aqui, o item não foi encontrado na lista
     }
 }
+
 
 /* 11. Procurar a primeira ocorrência do maior item na lista e imprimir posição */
 void ISll::find_max(string cmd, string argumento){
@@ -188,14 +191,14 @@ void ISll::delete_pos(string cmd, string argumentos){
                 int i = 0;                  // Índice interador para percorrer a lista
 
                 /* Percorre a lista até chegar ao nó anterior ao nó que deve ser removido */
-                while (i < pos) {
-                    anterior = inicio;
-                    inicio = inicio->next;
-                    i++;
+                while (i < pos) {          // Percorre a lista até encontrar a posição desejada (pos)
+                    anterior = inicio;     // Atualiza o ponteiro para o nó anterior
+                    inicio = inicio->next; // Move o ponteiro para o próximo nó da lista
+                    i++;                   // Incrementa o índice do iterador
                 }
 
                 /* Atualiza o ponteiro do nó anterior para apontar para o nó seguinte do nó a ser removido */
-                if (anterior == NULL) {      // Se o nó a ser removido for o primeiro da lista
+                if (anterior == NULL) {     // Se o nó a ser removido for o primeiro da lista
                     head = inicio->next;
                 } else {
                     anterior->next = inicio->next;
@@ -288,21 +291,21 @@ bool ISll::verificarListaVazia(string cmd){
     /* Se a lista não está vazia, é porque tem pelo menos 1 nó.
      * Se unico, então é primeiro e último ao mesmo tempo e nesse
      * caso não está vazia mas com um elemento */
-    if(head == NULL ){                // Se head está vazia,
+    if(head == NULL ){                  // Se head está vazia,
         cout << "Comando " << cmd << ": Lista vazia!\n" << endl; // Então imprime mensagem de erro
-        return true;                  // Devolve true => lista vazia
-    }else {                           // Se lista não está vazia
-        return false;                 // Apenas devolve falso => lista ocupada
+        return true;                    // Devolve true => lista vazia
+    }else {                             // Se lista não está vazia
+        return false;                   // Apenas devolve falso => lista ocupada
     }
 }
 
 /* Para verificar se a posicao que está a ser procurada existe (devolvendo booleano "True"), se não for encontrada, devolve frase de erro */
 bool ISll::posicaoValida(string cmd, int posicao, int tamanho) {
-    if(posicao >= 0 && posicao < tamanho){
-       return true;
-    }else{
-        cout << "Comando " << cmd << " : Posicao invalida!\n" << endl;
-        return false;
+    if(posicao >= 0 && posicao < tamanho){ // Verifica se a posição está dentro dos limites válidos da lista
+        return true;                       // Retorna verdadeiro se a posição é válida
+    } else {
+        cout << "Comando " << cmd << " : Posicao invalida!\n" << endl; // Imprime uma mensagem de erro indicando a posição inválida
+        return false;                      // Retorna falso se a posição é inválida
     }
 }
 
