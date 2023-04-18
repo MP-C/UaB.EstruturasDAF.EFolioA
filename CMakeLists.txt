@@ -3,4 +3,4 @@ project(ListaComandosEFolioA)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(UaB.EstruturasDAF.EFolioA main-isll.cpp; isll.cpp; isll.h)# main.cpp; main-isll1.cpp;)
+add_executable(UaB.EstruturasDAF.EFolioA main-isll.cpp; isll.cpp; isll.h)
