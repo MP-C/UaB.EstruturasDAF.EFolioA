@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="ListaComandosEFolioA" targetName="UaB.EstruturasDAF.EFolioA" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e86cd543-7fc7-41e2-9c25-4ac5be00aa32" name="Changes" comment="" />
+    <list id="925dbd33-10a1-482f-903a-ed46d8dd0b1e" name="Changes by inesi" comment="">
+      <change beforePath="$PROJECT_DIR$/isll.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/isll.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CMakeLists.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/isll.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/isll.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="2NsQ2SGt2cK3B6qskvGpTblzeFx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\capelam\Documents\MPC\EngInformatica\UaB\3Ano\2.Semestre\2.2.EstruturasDadosAlgoritmosFundamentais-21046-Cont\EFolioA\UaB.EstruturasDAF.EFolioA" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UaB.EstruturasDAF.EFolioA" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ListaComandosEFolioA" TARGET_NAME="UaB.EstruturasDAF.EFolioA" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ListaComandosEFolioA" RUN_TARGET_NAME="UaB.EstruturasDAF.EFolioA">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e86cd543-7fc7-41e2-9c25-4ac5be00aa32" name="Changes" comment="" />
+      <created>1680450102699</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680450102699</updated>
+      <workItem from="1680450105007" duration="2560000" />
+      <workItem from="1680515658158" duration="298000" />
+      <workItem from="1680538244518" duration="7670000" />
+      <workItem from="1680627102519" duration="1206000" />
+      <workItem from="1680643041588" duration="1937000" />
+      <workItem from="1680717765704" duration="11458000" />
+      <workItem from="1680802248391" duration="10364000" />
+      <workItem from="1680876795183" duration="64305000" />
+      <workItem from="1681069438752" duration="26570000" />
+      <workItem from="1681232591241" duration="9485000" />
+      <workItem from="1681247931475" duration="613000" />
+      <workItem from="1681420073961" duration="2858000" />
+      <workItem from="1681659555469" duration="4852000" />
+      <workItem from="1681672036224" duration="488000" />
+      <workItem from="1681680075743" duration="111000" />
+      <workItem from="1681680379143" duration="549000" />
+      <workItem from="1681749347228" duration="17132000" />
+      <workItem from="1681846242725" duration="1463000" />
+    </task>
+    <task id="LOCAL-00001" summary="After create git and adding new details / structure and docs">
+      <created>1680454496560</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680454496560</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new structure and new function's corrections">
+      <created>1680737400116</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680737400117</updated>
+    </task>
+    <task id="LOCAL-00003" summary="function's corrections with Node in cpp ande others folders / m+ethodes to check.">
+      <created>1680819344036</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680819344036</updated>
+    </task>
+    <task id="LOCAL-00004" summary="new methods added. text test file. 10% test OK">
+      <created>1681031934147</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681031934147</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new methods added. Falta verrificações errors e bugs">
+      <created>1681053795618</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681053795618</updated>
+    </task>
+    <task id="LOCAL-00006" summary="erros de testes, comentários e estrutura &quot;limpa&quot;">
+      <created>1681124803851</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681124803851</updated>
+    </task>
+    <task id="LOCAL-00007" summary="deposito prof dpl">
+      <created>1681126801129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681126801129</updated>
+    </task>
+    <task id="LOCAL-00008" summary="deposito prof dpl">
+      <created>1681132299714</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681132299714</updated>
+    </task>
+    <task id="LOCAL-00009" summary="problema argumentos resolvido.&#10;Testes a verificar!">
+      <created>1681150072956</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681150072956</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Correção de várias funções : 10, 11, 12 e 13. Alguns testes local OK! muito ainda não. insert negativos não faz">
+      <created>1681163010662</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681163010662</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Alguns testes local OK! Insert negativos OK. Problema VPL e 3 funções não OK!">
+      <created>1681247052914</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681247052914</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Comentários e Problema VPL">
+      <created>1681429259858</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681429259858</updated>
+    </task>
+    <task id="LOCAL-00013" summary="4 testes ok! =&gt; Problema VPL">
+      <created>1681671823198</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681671823198</updated>
+    </task>
+    <task id="LOCAL-00014" summary="5 testes ok! input um por um =&gt; Problema VPL (continua)">
+      <created>1681680873218</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681680873218</updated>
+    </task>
+    <task id="LOCAL-00015" summary="correções">
+      <created>1681758576564</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681758576564</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Cometários e TODOS removidos">
+      <created>1681764554392</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681764554392</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Cometários, e código revisto">
+      <created>1681771765236</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681771765236</updated>
+    </task>
+    <task id="LOCAL-00018" summary="clean, set, and go!">
+      <created>1681847106378</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681847106378</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="After create git and adding new details / structure and docs" />
+    <MESSAGE value="After create git and adding new details / structure and docs&#10;And creating names it will be needed" />
+    <MESSAGE value="new structure and new function's corrections" />
+    <MESSAGE value="function's corrections with Node in cpp ande others folders / m+ethodes to check." />
+    <MESSAGE value="new methods added. text test file. 10% test OK" />
+    <MESSAGE value="new methods added. Falta verrificações errors e bugs" />
+    <MESSAGE value="9 metodos revistos. Faltam os utlimos 4" />
+    <MESSAGE value="erros de testes, comentários e estrutura &quot;limpa&quot;" />
+    <MESSAGE value="deposito prof dpl" />
+    <MESSAGE value="problema argumentos resolvido.&#10;Testes a verificar!" />
+    <MESSAGE value="Correção de várias funções : 10, 11, 12 e 13. Alguns testes local OK! muito ainda não. insert negativos não faz" />
+    <MESSAGE value="Alguns testes local OK! Insert negativos OK. Problema VPL e 3 funções não OK!" />
+    <MESSAGE value="Comentários e Problema VPL" />
+    <MESSAGE value="4 testes ok! =&gt; Problema VPL" />
+    <MESSAGE value="5 testes ok! input um por um =&gt; Problema VPL (continua)" />
+    <MESSAGE value="correções" />
+    <MESSAGE value="Cometários e TODOS removidos" />
+    <MESSAGE value="Cometários, e código revisto" />
+    <MESSAGE value="clean, set, and go!" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean, set, and go!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>188</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>78</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>79</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>80</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>42</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>49</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/isll.cpp</url>
+          <line>38</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="this-&gt;tail" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

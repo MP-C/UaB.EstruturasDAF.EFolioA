@@ -165,17 +165,19 @@ void ISll::find(string cmd, string argumentos) {
 /* 11. Procurar a primeira ocorrência do maior item na lista e imprimir posição */
 void ISll::find_max(string cmd, string argumento){
     if(verificarListaVazia(cmd) == false) {
-        int pos = 0; //1                    // Inicia a contagem das posições a partir de 0
+        int pos = 0;                        // Inicia a contagem das posições a partir de 1
+        int posMax = 0;
         int valorMaximo = head->item;       // Inicia o valor máximo com o primeiro valor da lista
         INode* atual = head->next;          // Começa a procurar pelo valor máximo a partir do segundo elemento da lista
         while (atual != NULL) {
+             pos++;                         // Atualiza a posição do elemento atual
             if (atual->item > valorMaximo) {
                 valorMaximo = atual->item;  // Atualiza o valor máximo encontrado
                 posMax = pos;               // Atualiza a posição do valor máximo encontrado
             }
             atual = atual->next;            // Avança para o próximo elemento da lista
         }
-        cout << "Max Item " << valorMaximo << " na posicao " << pos << "!\n" << endl; // Imprime o valor máximo e sua posição na lista
+        cout << "Max Item " << valorMaximo << " na posicao " << posMax << "!\n" << endl; // Imprime o valor máximo e sua posição na lista
     }
 }
 
@@ -209,80 +211,58 @@ void ISll::delete_pos(string cmd, string argumentos){
         }
     }
 }
+// Função auxiliar que recebe o início e o fim de uma sublista e inverte a ordem dos seus nós
+static INode* reverse(INode *start, INode *end)
+{
+    INode *prev = nullptr, *current = start, *next = nullptr;
+    // percorre os nós da sublista, invertendo a direção dos seus ponteiros next
+    while (current != end) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    // atualiza o ponteiro next do último nó invertido para o nó seguinte
+    end->next = prev;
+    // devolve o novo primeiro nó da sublista invertida
+    return end;
+}
 
-/* 13. Inverter a ordem dos itens da lista a partir da posição 1 até à posição indicada */
-void ISll::invert_range(string cmd, string argumentos){
+// Função que inverte a ordem dos nós de uma sublista, definida pelos argumentos "pos1" e "pos2"
+void ISll::invert_range(string cmd, string argumentos) {
     stringstream ssItems(argumentos);
-    int pos1;
-    int pos2;
-    while(ssItems >> pos1 >> pos2) {
-        if(verificarListaVazia(cmd) == false) {
-            if (pos1 > pos2) {          // Se a posição 1 é maior que a posição 2, troca as posições
-                int temporario = pos1;
-                pos1 = pos2;
-                pos2 = temporario;
+    int pos1, pos2;
+    // percorre os argumentos, que representam as posições "pos1" e "pos2" de cada sublista a ser invertida
+    while (ssItems >> pos1 >> pos2) {
+        if (verificarListaVazia(cmd) == false) {
+            if (pos1 == pos2)
+                return;
+
+            // procura o primeiro nó a ser invertido, e seu nó anterior (se existir)
+            INode *rev_start = head, *rev_start_prev = nullptr;
+            for (int i = 1; i < pos1; i++) {
+                rev_start_prev = rev_start;
+                rev_start = rev_start->next;
             }
-            INode *p1 = head;               // Criar ponteiro p1 e inicializá-lo para o head da lista
-            INode *anterior1 = NULL;        // Criar ponteiro anterior1 e inicializá-lo para NULL
-            for (int i = 1; i < pos1 && p1 != NULL; i++) { // Percorre a lista até a posição 1
-                anterior1 = p1;             // Armazena o valor atual de p1 em anterior1
-                p1 = p1->next;              // Move o ponteiro p1 para o próximo nó da lista
+
+            // procura o último nó a ser invertido, e seu nó seguinte (se existir)
+            INode *rev_end = rev_start;
+            for (int i = pos1; i < pos2; i++) {
+                rev_end = rev_end->next;
             }
-            INode *p2 = p1;                 // Criar ponteiro p2 e inicializá-lo para p1
-            INode *anterior2 = anterior1;   // Criar ponteiro anterior2 e inicializá-lo para anterior1
-            for (int i = pos1; i < pos2 && p2 != NULL; i++) { // Percorre a lista até a posição 2
-                anterior2 = p2;             // Armazena o valor atual de p2 em anterior2
-                p2 = p2->next;              // Move o ponteiro p2 para o próximo nó da lista
+            INode *rev_end_next = rev_end->next;
+
+            // chama a função "reverse" para inverter os nós da sublista definida pelos nós "rev_start" e "rev_end"
+            reverse(rev_start, rev_end);
+
+            // interliga os nós invertidos na lista original
+            if (rev_start_prev != nullptr) {
+                rev_start_prev->next = rev_end;
+            } else {
+                head = rev_end;
             }
-            if (p1 != NULL && p2 != NULL) { // Se p1 e p2 forem diferentes de NULL
-                if (anterior1 != NULL) {    // Se anterior1 for diferente de NULL, atualiza o ponteiro next de anterior1
-                    anterior1->next = p2;
-                } else {                    // Caso contrário, atualiza head para p2
-                    head = p2;
-                }
-                if (anterior2 != NULL) {    // Se anterior2 for diferente de NULL, atualiza o ponteiro next de anterior2
-                    anterior2->next = p1;
-                } else {                    // Caso contrário, atualiza head para p1
-                    head = p1;
-                }
-                INode *temp = p2->next;     // Criar ponteiro temporário e inicializá-lo para o próximo nó após p2
-                p2->next = p1->next;        // Atualiza o ponteiro next de p2 para o próximo nó após p1
-                p1->next = temp;            // Atualiza o ponteiro next de p1 para o ponteiro temporário
-            }
+            rev_start->next = rev_end_next;
         }
-//        if (pos1 >= pos2 || pos1 < 0 || pos2 >= size) {
-//            cout << "Posicoes invalidas." << endl;
-//            return;
-//        }
-//
-//        // Navegar ate pos1 e guardar referencia do no anterior
-//        INode* atual = head;
-//        INode* anterior = NULL;
-//        int pos = 0;
-//        while (pos < pos1) {
-//            anterior = atual;
-//            atual = atual->next;
-//            pos++;
-//        }
-//
-//        // Criar lista auxiliar
-//        ISll auxList;
-//
-//        // Remover itens do intervalo [pos1, pos2] da lista original e inserir na lista auxiliar
-//        while (pos <= pos2) {
-//            INode* next = atual->next;
-//            auxList.insert(atual->item, 0);
-//            remove(atual);
-//            atual = next;
-//            pos++;
-//        }
-//
-//        // Reinserir itens na lista original
-//        while (!auxList.is_empty()) {
-//            insert(auxList.get_head()->get_data(), pos1);
-//            pos1++;
-//        }
-//    }
     }
 }
 
